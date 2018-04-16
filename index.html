@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+	
+
+ <script src="data.js"></script>
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+<body>
+	
+ <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+
+
+ <script>
+ 	
+//console.log(result);
+
+var field="province"
+
+var tempData= result.reduce( function (prev,curr) {
+
+
+
+if (curr[field] in prev)
+{
+
+prev[curr[field]]+=1;
+
+}
+
+else
+
+prev[curr[field]]=1;
+
+return prev;
+},{} )
+
+
+
+keysArr= Object.keys(tempData); 
+
+
+var labels=[];
+var values=[];
+var i=0;
+
+
+
+keysArr.forEach(function(ele){
+
+labels[i]=ele;
+values[i]=tempData[ele];
+
+i++;
+})
+
+var data = [{
+  values: values,
+  labels: labels,
+  type: 'pie'
+}];
+
+var layout = {
+  height: 800,
+  width: 800
+};
+
+Plotly.newPlot('myDiv', data, layout);
+
+ </script>
+</body>
+
+
+
+</html>
+
