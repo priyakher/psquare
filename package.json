@@ -1,0 +1,25 @@
+{
+  "name": "psquare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bayes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyakher/psquare.git"
+  },
+  "author": "priya and Priyasha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/priyakher/psquare/issues"
+  },
+  "homepage": "https://github.com/priyakher/psquare#readme",
+  "dependencies": {
+    "classificator": "^0.2.2",
+    "csvtojson": "^1.1.9",
+    "ml-confusion-matrix": "^0.3.0"
+  },
+  "devDependencies": {}
+}
