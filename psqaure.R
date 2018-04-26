@@ -119,5 +119,62 @@ str(test)
 
 
 write.csv(train, "wineTrain.csv")
-
 write.csv(test, "wineTest.csv")
+
+# start bag of words
+for (i in unique(train$variety)){
+  
+  # Nebbiolo <- subset(train, variety=="Nebbiolo")
+  
+  Nebbiolo <- subset(train, variety==i)
+  corpus = Corpus(VectorSource(Nebbiolo$stemDescription))
+  frequencies = DocumentTermMatrix(corpus)
+  # Let us only keep words that appear in at least 1% of the tweets. We 
+  # create a list of these words as follows. 
+  sparse = removeSparseTerms(frequencies, 0.99)
+  fqt <- findFreqTerms(sparse, lowfreq=300)
+  bagOfWords <- data.frame(term = character(0))
+  for(t in fqt){
+    bagOfWords <- rbind(bagOfWords, data.frame(term = t))
+  }  
+  
+  mainDir <- "/Users/priyashamehta/Documents/Spring2018/1.001/project/git/psquare"
+  subDir <- "BagOfWords"
+  dir.create(file.path(mainDir, subDir), showWarnings = FALSE)
+  setwd(file.path(mainDir, subDir))
+  
+  write.csv(bagOfWords, paste0("bagOfWords_", i,".csv"))
+
+}
+
+
+
+
+# We now have 155 terms instead of 12790. 
+
+# 5. We first create a new data frame. Each variable corresponds 
+# to one of the 155 words, and each row corresponds to one of the tweets.
+#document_terms = as.data.frame(as.matrix(sparse))
+#str(document_terms)
+
+# bagOfWords <- data.frame(term = character(0), freq = integer(0))
+#similarity between c1 and c2
+#for(t in ft1){
+ # find <- agrep(t, ft2)
+ # if(length(find) != 0){
+ #   common.c1c2 <- rbind(common.c1c2, data.frame(term = t, freq = length(find)))
+ # }
+  
+
+# typeof(variable)
+
+
+# https://stackoverflow.com/questions/45790815/compare-the-bag-of-words-in-two-document-and-find-the-matching-word-and-their-fr?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+# https://stackoverflow.com/questions/12693908/get-type-of-all-variables?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+# https://stackoverflow.com/questions/24703920/r-tm-package-vcorpus-error-in-converting-corpus-to-data-frame?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+# 
+
+
+
+
+
