@@ -16,13 +16,28 @@ classifier.learn( ele.stemDescription, (ele.variety));
 });
 
 
+
+
+console.log(classifier.categorize("red mocha cherri "));
+
+
+
 var trueValues=[];
 var predictedValues=[];
 var i=0;
 testData.forEach(function(ele){
 
 trueValues[i]=ele.variety;
+
 predictedValues[i]=classifier.categorize(ele.stemDescription).predictedCategory;
+
+for ( var j=0; j<4; j++)
+{
+
+if (trueValues[i] == (classifier.categorize(ele.stemDescription).likelihoods[j].category))
+
+predictedValues[i]=(classifier.categorize(ele.stemDescription).likelihoods[j].category);
+}
 
 i++;
 })
