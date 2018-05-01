@@ -1,3 +1,8 @@
+/*
+File name: csvtojson.js
+Function: converts csv data file to json format
+*/
+
 const csv=require('csvtojson');
 const csvFilePath='wineTrain.csv';
 //const csvFilePath='wineTest.csv';
