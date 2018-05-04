@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+	
+
+ <script src="data.js"></script>
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+<body>
+	
+ <div id="myDiv1"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+ <div id="myDiv2"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+<div id="myDiv3"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+<div id="myDiv4"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+
+ <script>
+ 	
+//console.log(result);
+
+
+graph("country", "myDiv1", "Data by country");
+graph("province", "myDiv2","Data by province");
+graph("variety", "myDiv3","Data by variety");
+//graph("winery", "myDiv4","Data by winery");
+function graph(field, div, name){
+
+var tempData= result.reduce( function (prev,curr) {
+
+
+
+if (curr[field] in prev)
+{
+
+prev[curr[field]]+=1;
+
+}
+
+else
+
+prev[curr[field]]=1;
+
+return prev;
+},{} )
+
+
+
+keysArr= Object.keys(tempData); 
+
+
+var labels=[];
+var values=[];
+var i=0;
+
+
+
+keysArr.forEach(function(ele){
+
+labels[i]=ele;
+values[i]=tempData[ele];
+
+i++;
+})
+
+var data = [{
+  values: values,
+  labels: labels,
+  type: 'pie',
+  textinfo:'none'
+}];
+
+var layout = {
+  height: 800,
+  width: 800,
+  title: name,
+ 
+};
+
+Plotly.newPlot(div, data, layout);
+}
+
+ </script>
+</body>
+
+
+
+</html>
+

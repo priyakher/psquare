@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/priyakher/psquare#readme",
   "dependencies": {
+    "bootstrap": "^4.1.0",
     "classificator": "^0.2.2",
     "csvtojson": "^1.1.9",
-    "ml-confusion-matrix": "^0.3.0"
+    "ml-confusion-matrix": "^0.3.0",
+    "save": "^2.3.2"
   },
   "devDependencies": {}
 }
