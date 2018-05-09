@@ -24,8 +24,6 @@ let revivedClassifier = bayes.fromJson(stateJson);
 
 var result=revivedClassifier.categorize(input);
 
-console.log(result);
-
 return result;
 
 }
