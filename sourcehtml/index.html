@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Digital Wine Assistant</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+   
+
+    <!-- Plugin CSS -->
+  
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" Style="color:#793844" href="#page-top">P Square</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" Style="color:#793844" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" Style="color:#793844" href="#portfolio">Services</a>
+            </li>
+                     <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" Style="color:#793844" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white d-flex" style="background-image: url('img/header.jpg')">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase" style="color:#FF5733">
+              <strong>Digital Wine Steward</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5"  Style="color:#FF5733">Digital Wine assitant uses machine learning to help you buy the wine that best suits your tastes</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Digital Wine Steward knows what you want. Our team here from MIT has collected reviews from world's best sommeliers, extensively researched wines from all parts of the world and applied latest statistical methods to identify best wines for every individual tastes and preferences. </p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#portfolio">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<form method="post" action="http://18.189.20.181:8081/result.html" name="myForm" onsubmit="return validateForm()">
+  
+    <section class="p-0" id="portfolio">
+      <br>
+      <fieldset id="chk1">
+   <h3 style="color: #FF5733; text-align: center; font-weight: bold;">1. Which fruit do you like? <br></h3>
+  <div class="container-fluid p-0" >
+    
+        <div class="row no-gutters popup-gallery">
+
+          <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check " src="img/portfolio/thumbnails/fruits/berri.jpg" alt="Berries"
+              style="height: 75%; width: 75%">
+             <input type="radio" name="chk1" id="item1" value="berri" >
+                   </div>
+       
+          <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check" src="img/portfolio/thumbnails/fruits/cherries.jpg" alt="Cherries"
+               style="height: 75%; width: 75%">
+             <input type="radio" name="chk1" id="item2" value="cherri" >
+            
+          </div>
+           
+          <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check" src="img/portfolio/thumbnails/fruits/lime.jpg" alt="Lime"
+              style="height: 75%; width: 75%">
+             <input type="radio" name="chk1" id="item3" value="lime"  >
+            
+          </div>
+          
+          <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check" src="img/portfolio/thumbnails/fruits/greenGrapes.jpg" alt=" Green Grapes"
+               style="height: 75%; width: 75%">
+             <input type="radio" name="chk1" id="item4" value="white grape" >
+            
+          </div>
+         
+          <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check" src="img/portfolio/thumbnails/fruits/redGrapes.jpg" alt=" Red Grapes"
+               style="height: 75%; width: 75%">
+             <input type="radio" name="chk1" id="item5" value="red grape" >
+            
+          </div>
+                     
+          </div>
+        </div>
+      </div>
+      </fieldset>   
+<br/><br/>
+      <fieldset id="chk2">
+  <h3 style="color: #FF5733; text-align: center; font-weight: bold;" >2. How do you like your tea? <br></h3>
+  <div class="container-fluid p-0" >
+        
+        <div class="row no-gutters popup-gallery">
+
+          <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check2" src="img/portfolio/thumbnails/fruits/black.jpg" alt=" Black Tea"
+               style="height: 75%; width: 75%">
+             <input type="radio" name="chk2" id="item5" value="red tannin" >
+            
+          </div>
+      
+      <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check2" src="img/portfolio/thumbnails/fruits/roseSweet.jpg" alt=" Sweet Rose Tea"
+               style="height: 75%; width: 75%">
+             <input type="radio" name="chk2" id="item5" value="rose sweet" >
+            
+          </div>
+
+          <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check2" src="img/portfolio/thumbnails/fruits/herbaltea.jpg" alt=" Herbal Tea"
+               style="height: 75%; width: 75%">
+             <input type="radio" name="chk2" id="item5" value="herbal" >
+            
+          </div>
+         
+        
+    </fieldset>
+    <br/><br/>
+<fieldset id="chk3">
+  <h3 style="color: #FF5733; text-align: center; font-weight: bold; ">3. Which flavor do you like? <br></h3>
+  <div class="container-fluid p-0" >
+        
+        <div class="row no-gutters popup-gallery">
+
+          <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check3" src="img/portfolio/thumbnails/fruits/chocolat.jpg" alt="chocolate"
+               style="height: 75%; width: 75%">
+             <input type="radio" name="chk3" id="item5" value="chocolat mocha" >
+            
+          </div>
+       <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           
+              <img class="img-fluid img-check3" src="img/portfolio/thumbnails/fruits/lemony.jpg" alt=" Sour Lemon"
+               style="height: 75%; width: 75%">
+             <input type="radio" name="chk3" id="item5" value="acid" >
+            
+          </div>
+      <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+        
+           
+              <img class="img-fluid img-check3" src="img/portfolio/thumbnails/fruits/spice.jpg" alt="Spicy"
+               style="height: 75%; width: 75%">
+             <input type="radio" name="chk3" id="item5" value="spice" >
+            
+          </div>
+
+         
+           
+        
+    </fieldset>
+    </section>
+    <br/><br/>
+<center>
+<input type="submit" value="submit" class="btn btn-primary btn-xl" style="text-align: center"  >
+<a class="btn btn-primary btn-xl " onclick="clearchoice()" style="background-color: #BFE3DB " >Clear!</a>
+
+</center>
+      </form>
+<script >
+  function clearchoice()
+      {
+
+      
+   var ele = document.getElementsByName("chk1");
+   for(var i=0;i<ele.length;i++)
+      ele[i].checked = false;
+
+var ele = document.getElementsByName("chk2");
+   for(var i=0;i<ele.length;i++)
+      ele[i].checked = false;
+
+    var ele = document.getElementsByName("chk3");
+   for(var i=0;i<ele.length;i++)
+      ele[i].checked = false;
+    
+        $('.img-check').not(this).removeClass('check')
+        .siblings('input').prop('checked',false);
+      $(this).addClass('check')
+            .siblings('input').prop('checked',true);
+
+  
+  $('.img-check2').not(this).removeClass('check2')
+        .siblings('input').prop('checked',false);
+      $(this).addClass('check2')
+            .siblings('input').prop('checked',true);
+
+  $('.img-check3').not(this).removeClass('check3')
+        .siblings('input').prop('checked',false);
+      $(this).addClass('check3')
+            .siblings('input').prop('checked',true);
+  
+
+      }
+function validateForm()
+
+{
+
+
+ 
+  var x = $('input[name=chk1]:checked').val(); 
+
+  
+      if (x == null) {
+        console.log("hey");
+          alert("Please select fruit");
+          return false;
+      }
+
+    var y = $('input[name=chk2]:checked').val(); 
+    if (y == null) {
+        alert("Please select tea type");
+        return false;
+    }
+
+    var z = $('input[name=chk3]:checked').val(); 
+    if (z == null) {
+        alert("Please select flavor");
+        return false;
+    }
+}
+
+
+</script>
+  
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Wanna include your wine collection to our Catalogue? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>888-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">feedback@psquare.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+  
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+  <script>
+      
+      $(document).ready(function(e){
+        
+      $('.img-check').click(function(e) {
+        $('.img-check').not(this).removeClass('check')
+        .siblings('input').prop('checked',false);
+      $(this).addClass('check')
+            .siblings('input').prop('checked',true);
+    });
+      
+  });
+    </script>
+
+      <script>
+      
+      $(document).ready(function(e){
+        
+      $('.img-check2').click(function(e) {
+        $('.img-check2').not(this).removeClass('check2')
+        .siblings('input').prop('checked',false);
+      $(this).addClass('check2')
+            .siblings('input').prop('checked',true);
+    });
+      
+  });
+    </script>
+   <script>
+      
+      $(document).ready(function(e){
+        
+      $('.img-check3').click(function(e) {
+        $('.img-check3').not(this).removeClass('check3')
+        .siblings('input').prop('checked',false);
+      $(this).addClass('check3')
+            .siblings('input').prop('checked',true);
+    });
+      
+  });
+    </script>
+  
+
+  </body>
+
+</html>

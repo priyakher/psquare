@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Digital Wine Assistant</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="data.js"></script>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+   
+
+    <!-- Plugin CSS -->
+  
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" Style="color:#793844" href="#page-top">P Square</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" Style="color:#793844" href="index.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" Style="color:#793844" href="index.html">Services</a>
+            </li>
+                     <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" Style="color:#793844" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+   
+   <section id="result">
+
+ 
+  
+    <section class="p-0" id="portfolio">
+      <fieldset id="chk1">
+     <h4 style="color: #FF5733; text-align: center; font-weight: bold;">Here are your suggested wines. Select wine type to explore more options</h4>
+  <div class="container-fluid p-0" style=" margin:auto;">
+    
+        <div class="row no-gutters popup-gallery" style="margin:auto;">
+
+          <div class="col-sm-2 col-sm-2" style="margin:auto;">
+           <label style="text-align: center;"> 
+              <img class="img-fluid img-check " src="img/portfolio/thumbnails/Pinot Noir.png" alt="">
+             <input type="radio" name="chk1" id="item4" value="Pinot Noir"  autocomplete="off">
+           </br>  Pinot Noir
+             </label>
+                   </div>
+         <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+               <label style="text-align: center;">
+              <img class="img-fluid img-check" src="img/portfolio/thumbnails/Bordeaux-style Red Blend.png" alt="">
+             <input type="radio" name="chk1" id="item4" value="Bordeaux-style Red Blend" >
+            <br/> Bordeaux-style Red Blend
+          </label>
+          </div>
+          <div class="col-sm-2 col-sm-2" style=" margin:auto;">
+           <label style="text-align: center;">
+              <img class="img-fluid img-check" src="img/portfolio/thumbnails/Red Blend.png" alt=""
+              >
+             <input type="radio" name="chk1" id="item4" value="Red Blend"  >
+              <br/> Red Blend
+          </label>
+          </div>
+            <div class="col-sm-2 col-sm-2">
+            <label style="text-align: center;" >
+              <img class="img-fluid img-check" src="img/portfolio/thumbnails/Rosé.png" alt=""
+                >
+             <input type="radio" name="chk1" id="item4" value="Rosé" >
+              <br/> Rosé
+          </label>
+          </div>
+                     
+          </div>
+        </div>
+      </div>
+      </fieldset>  
+      <center>
+   <a class="btn btn-primary btn-xl js-scroll-trigger" href="#wines" onclick="send()">Explore!</a>
+    <a class="btn btn-primary btn-xl " onclick="clearchoice()" style="background-color: #BFE3DB " >Clear!</a>
+</center> 
+ 
+      
+   </section>
+
+   <section id="wines" style="display: none; margin-left: 10%">
+
+<div class="form-group">
+
+  <h4 style="color: #FF5733; text-align: center; font-weight: bold;"> Please select country and price options</h4>
+      <label for="country">Select country (select one):</label>
+      <select  class="form-control" id="country" style="display: none; width: auto;">
+       
+      </select>
+       <label for="price">Select price range (select one):</label>
+      <select  class="form-control" id="price" style="display: none; width: auto;">
+      
+      </select>
+    </div>
+    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#finalResult" onclick="displayResults()" >Get Results!</a>
+  </form>
+</div>
+
+<script >
+      function clearchoice()
+      {
+
+      
+   var ele = document.getElementsByName("chk1");
+   for(var i=0;i<ele.length;i++)
+      ele[i].checked = false;
+
+
+    
+        $('.img-check').not(this).removeClass('check')
+        .siblings('input').prop('checked',false);
+      $(this).addClass('check')
+            .siblings('input').prop('checked',true);
+  
+
+ document.getElementById("finalResult").style.display="none";
+  document.getElementById("wines").style.display="none";
+      }
+
+function send()
+{
+
+
+     var selValue = $('input[name=chk1]:checked').val(); 
+
+
+    if (selValue ==null)
+     {
+       
+       alert("Please select wine");
+      
+    }
+
+else
+{
+
+document.getElementById("wines").style.display="block";
+  var selValue = $('input[name=chk1]:checked').val(); 
+
+  winedata= data.filter(function(index){
+
+
+    return (index.variety==selValue);
+  });
+
+/*var min =1000000000000000;
+var max=0;
+var buckets =10;
+
+*/
+var wineCountry = winedata.reduce(function(prev,curr){
+
+/*if (curr["price"]!=null)
+{
+
+  var price =Number(curr["price"]);
+if (price<min)
+
+  min=price;
+else
+  if (price>max)
+
+     max=price;
+
+ }
+*/
+  if (curr["country"] in prev){
+
+     prev[curr.country]+=1;
+
+     }
+  
+  else
+
+  {
+     prev[curr["country"]] =1;
+
+  }
+return prev;
+
+
+  },{})
+
+
+
+var CountryList = Object.keys(wineCountry);
+
+var countrySelect=document.getElementById("country");
+  countrySelect.style.display = "block"
+//PM
+countrySelect.options.length = 0;
+CountryList.forEach(function(index){
+
+
+    var opt = document.createElement('option');
+    opt.value = index;
+    opt.innerHTML = index;
+    countrySelect.appendChild(opt);
+
+
+})
+
+
+
+var priceSelect=document.getElementById("price");
+  priceSelect.style.display = "block";
+  //PM
+  priceSelect.options.length = 0;
+var opt = document.createElement('option');
+var pricerange= "Under $25"
+opt.value = 0;
+opt.innerHTML = pricerange;
+priceSelect.appendChild(opt);
+
+
+var opt1 = document.createElement('option');
+var pricerange1= "$25-$50"
+opt1.value = 1;
+opt1.innerHTML = pricerange1;
+priceSelect.appendChild(opt1);
+
+var opt2 = document.createElement('option');
+var pricerange2= "$50-$100"
+opt2.value = 2;
+opt2.innerHTML = pricerange2;
+priceSelect.appendChild(opt2);
+
+var opt3 = document.createElement('option');
+var pricerange3= "$100-$500"
+opt3.value = 3;
+opt3.innerHTML = pricerange3;
+priceSelect.appendChild(opt3);
+
+
+var opt4 = document.createElement('option');
+var pricerange4= "Above $500"
+opt4.value = 4;
+opt4.innerHTML = pricerange4;
+priceSelect.appendChild(opt4);
+
+}
+}
+    </script>
+
+
+
+   </section>
+
+
+
+    <section id ="finalResult" style="display: none;">
+
+        <h4 style="color: #FF5733; text-align: center; font-weight: bold;" id="tableHead"></h4>
+ 
+
+       <table class="table" style="margin-left: 10%; width: 80%">
+    <thead>
+      <tr>
+          <th>Country</th>
+          <th>Winery</th>
+          <th>Price</th>
+          <th>Points</th>
+      </tr>
+    </thead>
+    <tbody  id="outputTable">
+      
+      </tbody>
+    </table>
+
+      <script >
+        
+  function displayResults() {
+
+   
+  
+
+  var e = document.getElementById("country");
+  var selectedCountry = e.options[e.selectedIndex].value;
+
+
+  var f = document.getElementById("price");
+  var selectedPrice = f.options[f.selectedIndex].value;
+
+
+// console.log(selectedPrice);
+// console.log(selectedCountry);
+  var finaloutput = winedata.filter(function(index){
+
+     var currPrice=Number(index["price"]);
+
+        switch (Number(selectedPrice))
+     {
+
+      case 0:  return (( currPrice > 0 && currPrice <=25 )&& index["country"]==selectedCountry ); break;
+      case 1:  return ((currPrice >25 && currPrice <=50)  && index["country"]==selectedCountry ); break;
+
+      case 2:  return ((currPrice >50 && currPrice <=100)  && index["country"]==selectedCountry );break;
+
+      case 3:  return ((currPrice >100 && currPrice <=500)  && index["country"]==selectedCountry );break;
+
+      case 4:  return (currPrice > 500 && index["country"]==selectedCountry );break;
+
+
+
+
+     }
+
+
+
+
+
+
+  })
+
+uniqueArray = finaloutput.filter(function(item, pos, self) {
+    return self.indexOf(item) == pos;
+})
+
+var trimmedOutput = uniqueArray.sort(function(a,b)
+{
+ return Number(b["points"]) - Number(a["points"]);
+
+}  );
+
+
+if (trimmedOutput.length>0)
+{
+
+document.getElementById("finalResult").style.display="block";
+
+var k=0;
+var table =document.getElementById("outputTable");
+
+
+$("#outputTable").children().remove()
+
+var heading = document.getElementById("tableHead"); 
+heading.innerHTML = "Below is the list of wineries for " + trimmedOutput[0].variety + " in " + 
+                      selectedCountry + " within price range - " + f.options[f.selectedIndex].innerHTML; 
+
+for (var k=0; k<10 ; k++)
+
+{
+
+var index= trimmedOutput[k];
+
+    var tr= document.createElement('tr');
+
+    var td1 = document.createElement('td');
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
+    var td4 = document.createElement('td');
+
+    var text1 = document.createTextNode(index["country"]);
+    var text2 = document.createTextNode(index["winery"]);
+    var text3 = document.createTextNode(index["price"]);
+    var text4 = document.createTextNode(index["points"]);
+
+    td1.appendChild(text1);
+    td2.appendChild(text2);
+    td3.appendChild(text3);
+    td4.appendChild(text4);
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+
+    table.appendChild(tr);
+
+
+}
+}
+
+else 
+{
+
+  document.getElementById("finalResult").style.display="none";
+alert("Sorry! We do not have wines for this price range in " + selectedCountry);
+
+}
+
+   }
+
+      </script>
+      
+    </section>
+
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Wanna include your wine collection to our Catalogue? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>888-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">feedback@psquare.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+  
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+  <script>
+  
+      $(document).ready(function(e){
+        
+      $('.img-check').click(function(e) {
+        $('.img-check').not(this).removeClass('check')
+        .siblings('input').prop('checked',false);
+      $(this).addClass('check')
+            .siblings('input').prop('checked',true);
+    });
+      
+  });
+
+  $( window ).on( "load", function() {
+        $('input:radio').each(function() {
+          //if($(this).innerHTML == 'Rosé') {
+            console.log($(this).innerHTML);
+            alert($(this).value);
+          // } 
+          // else {
+          //   // Or an unchecked one here...
+          // }
+        });
+
+      console.log( "window loaded" );
+
+      alert("window loaded");
+    });
+    </script>
+  </body>
+
+</html>
